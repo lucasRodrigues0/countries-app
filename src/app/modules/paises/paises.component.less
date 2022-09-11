@@ -1,0 +1,90 @@
+@import ".\src\styles.less";
+
+.search {
+    margin-top: 2rem;
+}
+
+.search__text {
+    font-family: 'Kalam';
+    font-size: 24px;
+}
+
+.search__input {
+    background-color: @searchGray;
+    border: none;
+    border-radius: 25px;
+    height: 35px;
+    width: 250px;
+}
+
+.search__button {
+    background-color: @blue;
+    border: none;
+    border-radius: 25px;
+    color: @white;
+    font-family: 'Kalam';
+    font-size: 18px;
+    margin-left: 20px;
+    width: 120px;
+    height: 35px;
+}
+
+//temporario
+.search__button:hover {
+    background-color: @bgGray;
+    color: @blue;
+}
+
+.list {
+    display: flex;
+    margin-top: 5rem;
+    width: fit-content;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.list__card {
+    background-color: @gray;
+    border-radius: 5%;
+    box-sizing: border-box;
+    font-family: 'Kalam', sans-serif;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 297px;
+}
+
+.list__card__flag {
+    height: 148px;
+    padding-top: 25px;
+    width: 254px;
+}
+
+.list__card__name {
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+.list__card__official-name {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.list__card__subregion {
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.list__card__details {
+    background-color: @blue;
+    border: none;
+    border-radius: 25px;
+    color: @white;
+    font-family: 'Kalam', sans-serif;
+    font-size: 24px;
+    height: 48px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 229px;
+}
+
