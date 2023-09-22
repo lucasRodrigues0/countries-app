@@ -4,23 +4,14 @@
     <button type="button" class="search__button">Search</button>
 </section>
 <section class="list">
-    <div class="list__card">
-        <img src="https://flagcdn.com/pe.svg" alt="Country Flag" class="list__card__flag">
-        <h2 class="list__card__name">Country Name</h2>
-        <h3 class="list__card__official-name">Country Official Name</h3>
-        <p class="list__card__subregion">Subregion</p>
+    <div class="list__card" *ngFor="let country of list">
+        <img [src]="country.flags.svg" alt="Country Flag" class="list__card__flag">
+        <h2 class="list__card__name">{{ country.name.common }}</h2>
+        <h3 class="list__card__official-name">{{ country.name.official }}</h3>
+        <p class="list__card__subregion">{{ country.subregion }}</p>
         <a routerLink="/detalhes">
             <button class="list__card__details">See More</button>
         </a>
-    </div>  
-    <div class="list__card">
-        <img src="https://flagcdn.com/pe.svg" alt="Country Flag" class="list__card__flag">
-        <h2 class="list__card__name">Country Name</h2>
-        <h3 class="list__card__official-name">Country Official Name</h3>
-        <p class="list__card__subregion">Subregion</p>
-        <a routerLink="/detalhes">
-            <button class="list__card__details">See More</button>
-        </a>
-    </div>  
+    </div>
     
 </section>
