@@ -1,16 +1,17 @@
-<section class="head-section">
-    <img src="https://flagcdn.com/pe.svg" alt="Bandeira do país" class="head-section__img">
-    <div class="head-section__info">
-        <h1 class="head-section__info__title">country name</h1> 
-        <p class="head-section__info__subtitle">country official name</p>
-        <p class="head-section__info__subtitle">region</p>
-    </div>
-</section>
-<section class="main-section">
-    <p class="main-section__info">Country Name: [name]</p>
-    <p class="main-section__info">Capital: [capital]</p>
-    <p class="main-section__info">Currency: [currency] [symbol]</p>
-    <p class="main-section__info">Subregion: [subregion]</p>
-    <p class="main-section__info">Population: [population]</p>
-    <p class="main-section__info">Timezone: [timezone]</p>
-</section>
+<div *ngFor="let country of country">
+    <section class="head-section">
+        <img [src]="country.flags.svg" [alt]="country.flags.alt" class="head-section__img">
+        <div class="head-section__info">
+            <h1 class="head-section__info__title">{{ country.name.common }}</h1> 
+            <p class="head-section__info__subtitle">{{ country.name.official }}</p>
+            <p class="head-section__info__subtitle">{{ country.region }}</p>
+        </div>
+    </section>
+    <section class="main-section">
+        <p class="main-section__info">Capital: {{ country.capital }}</p>
+        <p class="main-section__info">Currency: [currency] [symbol]</p>
+        <p class="main-section__info">Subregion: {{ country.subregion }}</p>
+        <p class="main-section__info">Population: {{ country.population }}</p>
+        <p class="main-section__info">Timezone: [timezone]</p>
+    </section>
+</div>

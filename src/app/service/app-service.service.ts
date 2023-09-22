@@ -19,4 +19,11 @@ export class AppService {
     );
   }
 
+  public getByName(name: string): Observable<Array<Country>> {
+    return this.http.get<Array<Country>>(`${this.url}/name/${name}?fullText=true`).pipe(
+      res => res,
+      err => err
+    );
+  }
+
 }

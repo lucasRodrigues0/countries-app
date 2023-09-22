@@ -4,7 +4,7 @@ import { PaisesComponent } from './paises.component';
 import { DetalhesPaisComponent } from './detalhes-pais/detalhes-pais.component';
 
 const routes: Routes = [{ path: '', component: PaisesComponent },
-{path: 'detalhes', component: DetalhesPaisComponent}];
+{path: 'name/:name', component: DetalhesPaisComponent}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

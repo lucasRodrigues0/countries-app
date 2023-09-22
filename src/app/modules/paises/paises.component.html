@@ -5,11 +5,11 @@
 </section>
 <section class="list">
     <div class="list__card" *ngFor="let country of list">
-        <img [src]="country.flags.svg" alt="Country Flag" class="list__card__flag">
+        <img [src]="country.flags.svg" [alt]="country.flags.alt" class="list__card__flag">
         <h2 class="list__card__name">{{ country.name.common }}</h2>
         <h3 class="list__card__official-name">{{ country.name.official }}</h3>
         <p class="list__card__subregion">{{ country.subregion }}</p>
-        <a routerLink="/detalhes">
+        <a [routerLink]="['/name', country.name.common]">
             <button class="list__card__details">See More</button>
         </a>
     </div>
