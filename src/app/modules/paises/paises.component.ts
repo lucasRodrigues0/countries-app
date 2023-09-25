@@ -10,14 +10,27 @@ import { AppService } from 'src/app/service/app-service.service';
 export class PaisesComponent implements OnInit {
 
   public list: Array<Country> = [];
+  protected filtered: string = "";
+  public filteredList: Array<Country> = [];
 
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
     this.appService.getAll().subscribe({
-      next: res => this.list = res,
+      next: res => {
+        this.list = res;
+        this.showFiltered();
+      },
       error: err => console.log(err)
     });
+  }
+
+  protected showFiltered() {
+    if(this.filtered === "") {
+      this.filteredList = [...this.list];
+    } else {
+      this.filteredList = this.list.filter((country) => country.name.common.toLowerCase().includes(this.filtered.toLowerCase()));
+    }
   }
 
 }

@@ -1,10 +1,9 @@
 <section class="search">
     <label for="search" class="search__text">Search for a country: </label>
-    <input type="text" name="search" class="search__input">
-    <button type="button" class="search__button">Search</button>
+    <input type="text" name="search" class="search__input" [(ngModel)]="filtered" (input)="showFiltered()">
 </section>
 <section class="list">
-    <div class="list__card" *ngFor="let country of list">
+    <div class="list__card" *ngFor="let country of filteredList">
         <img [src]="country.flags.svg" [alt]="country.flags.alt" class="list__card__flag">
         <h2 class="list__card__name">{{ country.name.common }}</h2>
         <h3 class="list__card__official-name">{{ country.name.official }}</h3>

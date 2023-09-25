@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PaisesRoutingModule } from './paises-routing.module';
 import { PaisesComponent } from './paises.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { PaisesComponent } from './paises.component';
   ],
   imports: [
     CommonModule,
-    PaisesRoutingModule
+    PaisesRoutingModule,
+    FormsModule
   ]
 })
 export class PaisesModule { }
