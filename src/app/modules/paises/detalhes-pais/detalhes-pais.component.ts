@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Country } from 'src/app/model/country';
+import { Currency } from 'src/app/model/currency';
 import { AppService } from 'src/app/service/app-service.service';
 
 
@@ -13,6 +14,8 @@ export class DetalhesPaisComponent implements OnInit {
 
   country: Array<Country> | undefined;
   errorMessage: string | undefined;
+  timezones: Array<string> = [];
+  currencies: Currency = {};
 
   constructor(
     private appService: AppService,
@@ -25,7 +28,9 @@ export class DetalhesPaisComponent implements OnInit {
     if(countryName !== null) {
       this.appService.getByName(countryName).subscribe({
         next: res => {
-          this.country = res;
+          this.country = res; 
+          this.timezones = [...this.country[0].timezones];
+          this.currencies = this.country[0].currencies;
         },
         error: err => {
           this.errorMessage = 'Ocorreu um erro ao carregar os dados do país.';
@@ -37,4 +42,9 @@ export class DetalhesPaisComponent implements OnInit {
     }
   }
 
+  getCurrencies(currencies: Currency): string[] {
+    return Object.keys(currencies);
+  }
+
 }
+//{{ country.currencies['code'].name }} - {{ country.currencies['code'].symbol }}

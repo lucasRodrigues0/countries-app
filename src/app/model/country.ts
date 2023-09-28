@@ -1,3 +1,5 @@
+import { Currency } from "./currency";
+
 export interface Country {
     name: {
         common: string,
@@ -10,6 +12,7 @@ export interface Country {
         alt: string
     };
     population: string;
-    capital: Array<String>;
-    timezone: Array<String>;
+    capital: string;
+    timezones: Array<string>;
+    currencies: Currency;
 }

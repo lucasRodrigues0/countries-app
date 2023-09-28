@@ -9,9 +9,16 @@
     </section>
     <section class="main-section">
         <p class="main-section__info">Capital: {{ country.capital }}</p>
-        <p class="main-section__info">Currency: [currency] [symbol]</p>
+        <p class="main-section__info">Currencies: </p>
+        <span *ngFor="let currencyCode of getCurrencies(country.currencies)">
+            {{ country.currencies[currencyCode].name }} - {{ country.currencies[currencyCode].symbol }}
+        </span>
         <p class="main-section__info">Subregion: {{ country.subregion }}</p>
         <p class="main-section__info">Population: {{ country.population }}</p>
-        <p class="main-section__info">Timezone:  timezone</p>
+        <p class="main-section__info">Timezones:  </p>
+        <div *ngFor="let zone of timezones">
+            {{ zone }}
+        </div>
+        
     </section>
 </div>
