@@ -30,7 +30,6 @@ export class DetalhesPaisComponent implements OnInit {
         next: res => {
           this.country = res; 
           this.timezones = [...this.country[0].timezones];
-          this.currencies = this.country[0].currencies;
         },
         error: err => {
           this.errorMessage = 'Ocorreu um erro ao carregar os dados do país.';
