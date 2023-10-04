@@ -1,6 +1,7 @@
 # CountriesApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+
 This project is available at https://app2countries.netlify.app
 
 ## Development server
